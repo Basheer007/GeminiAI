@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        font-family: "Outfit", sans-serif;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #root {
+        min-height: 100vh;
+    }
+
+    .scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cssGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .cssGrid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 100px);
+    }
+}
+
+.loader {
+    animation: loader 3s infinite linear;
+    background-position: 800px 50px;
+
+}
+
+@keyframes loader {
+    0% {
+        background-position: -800px 0px;
+    }
+
+    100% {
+        background-position: 800px 0px;
+    }
+}
